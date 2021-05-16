@@ -1,5 +1,6 @@
 <template>
   <aside>
+  <!--
     <a
       href="https://contest.techdiary.dev"
       target="_blank"
@@ -11,8 +12,7 @@
         alt="dev-article-contest-season-1"
       />
     </a>
-
-    <widgets-site-stats />
+    -->
     <widgets-login v-if="!$auth.loggedIn" class="mb-8" />
     <widgets-online-users class="mb-4" v-if="$auth.loggedIn" />
     <widgets-latest-registered-users />
