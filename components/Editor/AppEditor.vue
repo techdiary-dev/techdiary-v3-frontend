@@ -337,7 +337,7 @@ export default {
             quotePlaceholder: 'Enter a quote',
             captionPlaceholder: "Quote's author",
           },
-          shortcut: 'CMD+SHIFT+O',
+          shortcut: 'CMD+SHIFT+O'
         },
 
         warning: require('@editorjs/warning'),
@@ -347,17 +347,40 @@ export default {
         //     endpoint: `${process.env.NUXT_ENV_APP_URL_CLIENT}/api/fetch-url`,
         //   },
         // },
+        //
         marker: {
           class: require('@editorjs/marker'),
-          shortcut: 'CMD+SHIFT+M',
+          shortcut: 'CMD+SHIFT+M'
         },
         code: require('@/assets/codeTool'),
-        embed: require('@editorjs/embed'),
+        embed: {
+          class: require('@editorjs/embed'),
+          inlineToolbar: true,
+          config: {
+            services: {
+              youtube: true,
+              codepen: true,
+              codesandbox: {
+                regex: /https?:\/\/codesandbox.io\/s\/([^\/\?\&]*)/,
+                embedUrl: 'https://codesandbox.io/embed/<%= remote_id %>?fontsize=14&hidenavigation=1&theme=dark&view=preview',
+                html: '<iframe \n' +
+                  '     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"\n' +
+                  '     title="article-progress-on-scroll"\n' +
+                  '     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"\n' +
+                  '     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"\n' +
+                  '   ></iframe>',
+                height: 300,
+                width: 600,
+                id: (groups) => groups.join('/embed/')
+              }
+            }
+          }
+        },
         table: {
           class: require('@editorjs/table'),
           inlineToolbar: true,
-          shortcut: 'CMD+ALT+T',
-        },
+          shortcut: 'CMD+ALT+T'
+        }
       }, // tools
       onChange: (api) => {
         api.saver.save().then((newData) => {

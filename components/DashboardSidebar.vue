@@ -126,9 +126,13 @@
     @apply w-4 h-4;
   }
   &__link {
-    @apply flex items-center p-1 mb-1 dark:text-gray-300;
+    @apply flex items-center p-1 mb-1 dark:text-gray-300 hover:bg-paste-300 dark:hover:text-gray-800 rounded transition duration-300;
+    //&:hover {
+    //  --tw-bg-opacity: .70;
+    //}
+
     &--active {
-      @apply rounded bg-paste-300 dark:text-gray-800;
+      @apply bg-paste-300 dark:text-gray-800;
     }
   }
   &__label {

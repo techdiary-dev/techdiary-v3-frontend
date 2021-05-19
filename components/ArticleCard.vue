@@ -2,18 +2,19 @@
   <div>
     <article-user-info :article="article" :showReactionAlways="true" />
 
-    <div v-if="article.thumbnail" class="w-full overflow-hidden rounded-md">
-      <nuxt-link :to="articleUrl">
+    <figure v-if='article.thumbnail' class='w-full overflow-hidden rounded-md'>
+      <nuxt-link :to='articleUrl'>
         <image-widget
-          :imageUrl="article.thumbnail"
-          crop="scale"
-          width="600"
-          fetchFormat="auto"
-          quality="auto"
-          loading="lazy"
+          :imageUrl='article.thumbnail'
+          crop='scale'
+          width='600'
+          fetchFormat='auto'
+          quality='auto'
+          loading='lazy'
+          :alt='article.title'
         />
       </nuxt-link>
-    </div>
+    </figure>
 
     <!-- Article content start -->
     <div class="mt-2">
