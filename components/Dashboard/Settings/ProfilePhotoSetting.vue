@@ -107,10 +107,11 @@ export default {
       /* Make sure file exists */
       if (!file) return
 
-      this.profilePhoto = await this.uploadFile(
+      const public_id = await this.uploadFile(
         file,
         'techdiary-user-profile-photos'
       )
+      this.profilePhoto = this.$cloudinary.image.url(public_id, { crop: 'scale', width: 300 })
 
       this.loading = false
     },

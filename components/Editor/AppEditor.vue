@@ -295,10 +295,11 @@ export default {
           config: {
             uploader: {
               uploadByFile: async (file) => {
-                const url = await this.uploadFile(
+                const public_id = await this.uploadFile(
                   file,
                   'techdiary-article-assets'
                 )
+                const url = this.$cloudinary.image.url(public_id, { crop: 'scale' })
 
                 return {
                   success: 1,
