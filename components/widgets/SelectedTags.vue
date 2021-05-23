@@ -20,28 +20,28 @@ export default {
     tags: [
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873446/static-assets/tag-icons/nodejs.svg',
-        label: 'nodejs',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782237/static-assets/tag-icons/nbws9ynczmavj86ontfz.svg',
+        label: 'nodejs'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873448/static-assets/tag-icons/typescript.svg',
-        label: 'ts',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782240/static-assets/tag-icons/kvyqqabeipmca7utxf8e.svg',
+        label: 'ts'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873444/static-assets/tag-icons/js.svg',
-        label: 'js',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782237/static-assets/tag-icons/na8zbg5d1tuxt5yp6kay.svg',
+        label: 'js'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873444/static-assets/tag-icons/java.svg',
-        label: 'java',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782235/static-assets/tag-icons/tritkwhlognysckvztmw.svg',
+        label: 'java'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873446/static-assets/tag-icons/python.svg',
-        label: 'python',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782237/static-assets/tag-icons/w9zqspigpdgdmglbjo1g.svg',
+        label: 'python'
       },
       {
         icon:
@@ -50,63 +50,63 @@ export default {
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873442/static-assets/tag-icons/go.svg',
-        label: 'go',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782235/static-assets/tag-icons/qcbazadpuxskoaacu6mn.svg',
+        label: 'go'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873446/static-assets/tag-icons/php.svg',
-        label: 'php',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782237/static-assets/tag-icons/akx8gxzfgqdyvcffpadi.svg',
+        label: 'php'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873446/static-assets/tag-icons/ruby.svg',
-        label: 'ruby',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782239/static-assets/tag-icons/uruwktd4r0g7chwf7f3g.svg',
+        label: 'ruby'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873443/static-assets/tag-icons/html.svg',
-        label: 'html',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782235/static-assets/tag-icons/ivz6wh9hmtynuug99gcl.svg',
+        label: 'html'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873440/static-assets/tag-icons/css.svg',
-        label: 'css',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782233/static-assets/tag-icons/qap8jcvbl5dvjbktnnxo.svg',
+        label: 'css'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873444/static-assets/tag-icons/laravel.svg',
-        label: 'laravel',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782236/static-assets/tag-icons/hcddvgvejmha0hr8emkz.svg',
+        label: 'laravel'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873442/static-assets/tag-icons/graphql.svg',
-        label: 'graphql',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782235/static-assets/tag-icons/wtxrrpsfqguomzqjavam.svg',
+        label: 'graphql'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620055377/static-assets/tag-icons/react.svg',
-        label: 'react',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782239/static-assets/tag-icons/erfbu54l2mquphszheck.svg',
+        label: 'react'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873448/static-assets/tag-icons/vue.svg',
-        label: 'vue',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782240/static-assets/tag-icons/rh7xfiz28bxklfzymftd.svg',
+        label: 'vue'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620055921/static-assets/tag-icons/svelte.svg',
-        label: 'svelte',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782240/static-assets/tag-icons/wsunggfipja7edqsybg5.svg',
+        label: 'svelte'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620054922/static-assets/tag-icons/angular.svg',
-        label: 'angular',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782232/static-assets/tag-icons/xbazdwl9wpdqi1naqtib.svg',
+        label: 'angular'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873442/static-assets/tag-icons/flutter.svg',
-        label: 'flutter',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782233/static-assets/tag-icons/jb9r6xjy7yi1gkeqqvnh.svg',
+        label: 'flutter'
       },
       {
         icon:
@@ -115,24 +115,24 @@ export default {
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873442/static-assets/tag-icons/docker.svg',
-        label: 'docker',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782233/static-assets/tag-icons/kow5csrider7v1eizt1q.svg',
+        label: 'docker'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873440/static-assets/tag-icons/aws.svg',
-        label: 'aws',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782233/static-assets/tag-icons/jkepqds7ziutsnle1e4a.svg',
+        label: 'aws'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873442/static-assets/tag-icons/git.svg',
-        label: 'git',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782234/static-assets/tag-icons/vvx5vhoos8jgkutp48ll.svg',
+        label: 'git'
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873442/static-assets/tag-icons/github.svg',
-        label: 'github',
-      },
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782234/static-assets/tag-icons/hwsbp19pfifwr367xtoh.svg',
+        label: 'github'
+      }
     ],
   }),
 }
