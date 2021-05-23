@@ -34,8 +34,8 @@ module.exports = {
       },
       fontFamily: {
         KohinoorBangla: ['KohinoorBangla', 'Nunito', 'Arial'],
-        Boshonto: ['Boshonto', 'Nunito', 'Arial'],
-        mono: ['Fira Code', 'techdiary-bangla', 'monospace'],
+        siliguri: ['Hind Siliguri', 'Nunito', 'Arial'],
+        mono: ['Fira Code', 'techdiary-bangla', 'monospace']
       },
       zIndex: {
         '-1': '-1',

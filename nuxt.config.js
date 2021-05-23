@@ -22,13 +22,17 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap',
+          'https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap'
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Fira+Code&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Fira+Code&display=swap'
       },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap'
+      },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }
     ],
     script: [
       {

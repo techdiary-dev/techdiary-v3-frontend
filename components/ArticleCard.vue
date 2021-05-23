@@ -17,12 +17,12 @@
     </figure>
 
     <!-- Article content start -->
-    <div class="mt-2">
-      <nuxt-link :to="articleUrl" class="block text-xl text-dark font-Boshonto">
+    <div class='mt-2'>
+      <nuxt-link :to='articleUrl' class='block text-2xl text-dark font-siliguri font-bold'>
         <span
-          v-if="isSearchCard"
-          class="search-title"
-          v-html="article._highlightResult.title.value"
+          v-if='isSearchCard'
+          class='search-title'
+          v-html='article._highlightResult.title.value'
         >
         </span>
         <span v-else>

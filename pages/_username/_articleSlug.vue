@@ -30,7 +30,7 @@
 
         <!-- Title and meta start -->
         <div class="my-4">
-          <h2 class="text-3xl md:text-4xl dark:text-gray-300 font-Boshonto">
+          <h2 class='text-3xl md:text-4xl font-bold dark:text-gray-300 font-siliguri'>
             {{ article.title }}
           </h2>
           <p class="text-dark-secondary">
