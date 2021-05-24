@@ -2,27 +2,30 @@
   <div>
     <article-user-info :article="article" :showReactionAlways="true" />
 
-    <figure v-if='article.thumbnail' class='w-full overflow-hidden rounded-md'>
-      <nuxt-link :to='articleUrl'>
+    <figure v-if="article.thumbnail" class="w-full overflow-hidden rounded-md">
+      <nuxt-link :to="articleUrl">
         <image-widget
-          :imageUrl='article.thumbnail'
-          crop='scale'
-          width='600'
-          fetchFormat='auto'
-          quality='auto'
-          loading='lazy'
-          :alt='article.title'
+          :imageUrl="article.thumbnail"
+          crop="scale"
+          width="600"
+          fetchFormat="auto"
+          quality="auto"
+          loading="lazy"
+          :alt="article.title"
         />
       </nuxt-link>
     </figure>
 
     <!-- Article content start -->
-    <div class='mt-2'>
-      <nuxt-link :to='articleUrl' class='block text-2xl text-dark font-siliguri font-bold'>
+    <div class="mt-2">
+      <nuxt-link
+        :to="articleUrl"
+        class="block text-2xl font-bold text-dark font-siliguri"
+      >
         <span
-          v-if='isSearchCard'
-          class='search-title'
-          v-html='article._highlightResult.title.value'
+          v-if="isSearchCard"
+          class="search-title"
+          v-html="article._highlightResult.title.value"
         >
         </span>
         <span v-else>
