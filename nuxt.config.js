@@ -21,22 +21,21 @@ export default {
     link: [
       {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap'
+        href: 'https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap',
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Fira+Code&display=swap'
+        href: 'https://fonts.googleapis.com/css2?family=Fira+Code&display=swap',
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap'
+        href: 'https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap',
       },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },
     ],
     script: [
       {
-        src: 'https://analytics.techdiary.dev/js/index.js',
+        src: 'https://analytics.graphland.dev/js/plausible.js',
         'data-domain': 'techdiary.dev',
         defer: true,
         async: true,
