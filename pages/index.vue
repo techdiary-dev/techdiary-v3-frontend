@@ -1,8 +1,8 @@
 <template>
-  <layout-home>
-    <template #top>
+  <div>
+    <!-- <template #top>
       <hero v-if="!$auth.loggedIn" />
-    </template>
+    </template> -->
 
     <editor-fake-editor />
 
@@ -24,11 +24,12 @@
         <loader-spin />
       </div>
     </div>
-  </layout-home>
+  </div>
 </template>
 
 <script>
 export default {
+  layout: 'home',
   head: {
     title: 'নীড়',
     meta: [
@@ -68,20 +69,15 @@ export default {
     try {
       const {
         data,
-        meta: { current_page, last_page }
+        meta: { current_page, last_page },
       } = await this.$axios.$get('/api/articles')
 
       // this.initialLoading = false
 
       this.articles = data
       this.pageMeta = { current_page, last_page }
-    } catch (error) {
-    }
+    } catch (error) {}
   },
-  mounted() {
-    window.reload()
-  },
-  fetchOnServer: false,
   methods: {
     async loadMore() {
       const { data: articles } = await this.$axios.$get(

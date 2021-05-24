@@ -30,7 +30,9 @@
 
         <!-- Title and meta start -->
         <div class="my-4">
-          <h2 class='text-3xl md:text-4xl font-bold dark:text-gray-300 font-siliguri'>
+          <h2
+            class="text-3xl font-bold  md:text-4xl dark:text-gray-300 font-siliguri"
+          >
             {{ article.title }}
           </h2>
           <p class="text-dark-secondary">
@@ -88,11 +90,11 @@ export default {
       meta: [
         {
           name: 'description',
-          content: `${this.article?.title} | Techdiary`
+          content: `${this.article?.title} | Techdiary`,
         },
         {
           property: 'og:title',
-          content: `${this.article?.title} | Techdiary`
+          content: `${this.article?.title} | Techdiary`,
         },
         {
           property: 'og:image',
