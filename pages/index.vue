@@ -78,6 +78,9 @@ export default {
     } catch (error) {
     }
   },
+  mounted() {
+    window.reload()
+  },
   fetchOnServer: false,
   methods: {
     async loadMore() {
