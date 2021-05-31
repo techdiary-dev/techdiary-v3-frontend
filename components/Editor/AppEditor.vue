@@ -342,12 +342,12 @@ export default {
         },
 
         warning: require('@editorjs/warning'),
-        // linkTool: {
-        //   class: require('@editorjs/link'),
-        //   config: {
-        //     endpoint: `https://cocky-brattain-fbeacf.netlify.app/.netlify/functions/metafetcher`
-        //   }
-        // },
+        linkTool: {
+          class: require('@editorjs/link'),
+          config: {
+            endpoint: `https://cocky-brattain-fbeacf.netlify.app/.netlify/functions/metafetcher`
+          }
+        },
         marker: {
           class: require('@editorjs/marker'),
           shortcut: 'CMD+SHIFT+M'
