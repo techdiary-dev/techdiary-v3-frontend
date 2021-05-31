@@ -336,19 +336,18 @@ export default {
           inlineToolbar: true,
           config: {
             quotePlaceholder: 'Enter a quote',
-            captionPlaceholder: "Quote's author",
+            captionPlaceholder: 'Quote\'s author'
           },
           shortcut: 'CMD+SHIFT+O'
         },
 
         warning: require('@editorjs/warning'),
-        // linkTool: {
-        //   class: require('@editorjs/link'),
-        //   config: {
-        //     endpoint: `${process.env.NUXT_ENV_APP_URL_CLIENT}/api/fetch-url`,
-        //   },
-        // },
-        //
+        linkTool: {
+          class: require('@editorjs/link'),
+          config: {
+            endpoint: `https://cocky-brattain-fbeacf.netlify.app/.netlify/functions/metafetcher`
+          }
+        },
         marker: {
           class: require('@editorjs/marker'),
           shortcut: 'CMD+SHIFT+M'
