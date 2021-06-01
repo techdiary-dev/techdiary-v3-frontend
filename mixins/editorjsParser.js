@@ -137,14 +137,16 @@ export default {
            * --------------------------------------------------
            */
           html += `
-          <a class='techdiary-embeded-link flex hover:no-underline border border-gray-50 shadow p-3' href='${block.data.link}' target='_blank'>
-            <div>
-                <p class=' text-gray-500'>${block.data.meta.title}</p>
-                <p>${block.data.meta.description}</p>
-            </div>
-            <div class='   w-96 h-96 overflow-hidden'>
-              <img src='${block.data.meta.image.url}'/>
-            </div>
+          <a style='text-decoration: none; display: grid; grid-template-columns: 1fr 200px' class='w-full mx-auto border rounded-md border-gray-50 dark:border-gray-700 hover:bg-opacity-60 shadow h-[fit-content]' href='${block.data.link}' target='_blank'>
+
+            <span>
+                <p class='text-dark text-md pl-3'>${block.data.meta.title}</p>
+                <p class='text-sm pl-3 pr-2'>${block.data.meta.description.substr(0, 130)}</p>
+            </span>
+             <span class='col-span-2 w-full'>
+              <img src='${block.data.meta.image.url}' class='w-full' alt='${block.data.meta.title}'/>
+            </span>
+
           </a>
         `
         } else if (block.type === 'table') {
