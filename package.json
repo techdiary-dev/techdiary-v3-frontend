@@ -16,6 +16,7 @@
     "@nuxtjs/axios": "^5.13.1",
     "@nuxtjs/cloudinary": "^1.0.2",
     "@nuxtjs/moment": "^1.6.1",
+    "@nuxtjs/sentry": "^5.1.0",
     "@nuxtjs/toast": "^3.3.1",
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "algoliasearch": "^4.8.5",

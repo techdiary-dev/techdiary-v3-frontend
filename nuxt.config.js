@@ -69,11 +69,20 @@ export default {
     '@nuxtjs/moment',
     '@nuxtjs/google-analytics',
     '@nuxt/image',
-    '@nuxtjs/svg',
+    '@nuxtjs/svg'
   ],
   toast: {
     position: 'top-center',
-    duration: 2000,
+    duration: 2000
+  },
+  sentry: {
+    dsn: 'https://7b6d6083b18746e8ad5a773e9d4a1846@o584876.ingest.sentry.io/5779471', // Enter your project's DSN here
+    // Additional Module Options go here
+    // https://sentry.nuxtjs.org/sentry/options
+    config: {
+      // Add native Sentry config here
+      // https://docs.sentry.io/platforms/javascript/guides/vue/configuration/options/
+    }
   },
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -81,15 +90,16 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     '@nuxtjs/cloudinary',
+    '@nuxtjs/sentry',
     '@nuxtjs/toast',
     '@nuxt/content',
     [
       '@netsells/nuxt-hotjar',
       {
         id: 1886608,
-        sv: 6,
-      },
-    ],
+        sv: 6
+      }
+    ]
   ],
 
   axios: {
