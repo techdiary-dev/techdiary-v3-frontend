@@ -52,7 +52,6 @@ export default {
     '@/plugins/visibility-observer.js',
     '@/plugins/select.client.js',
     '@/plugins/clickaway.js',
-    '@/plugins/fragment.js',
     '@/plugins/bn.js',
     '@/plugins/echo.client.js',
   ],

@@ -1,12 +1,12 @@
 <template>
-  <Fragment>
-    <h3 class="-mb-4 text-dark">সর্বশেষ নিবন্ধিত ব্যবহারকারী</h3>
+  <div>
+    <h3 class='-mb-4 text-dark'>সর্বশেষ নিবন্ধিত ব্যবহারকারী</h3>
 
-    <div v-if="$fetchState.pending">
-      <skelleton-user-list v-for="i in new Array(10)" :key="i" />
+    <div v-if='$fetchState.pending'>
+      <skelleton-user-list v-for='i in new Array(10)' :key='i' />
     </div>
     <div v-else>
-      <div v-for="user in users" :key="user.id" class="flex items-center my-4">
+      <div v-for='user in users' :key='user.id' class='flex items-center my-4'>
         <nuxt-link
           :to="{ name: 'username', params: { username: user.username } }"
         >
@@ -30,13 +30,13 @@
               {{ user.name }}
             </nuxt-link>
           </h3>
-          <p class="text-sm text-dark-secondary">
+          <p class='text-sm text-dark-secondary'>
             {{ $moment(user.joined).fromNow() }}
           </p>
         </div>
       </div>
     </div>
-  </Fragment>
+  </div>
 </template>
 
 <script>

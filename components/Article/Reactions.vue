@@ -1,15 +1,15 @@
 <template>
-  <Fragment>
-    <div class="reaction">
-      <button class="reaction__button" @click="doReact('HEART', article.slug)">
+  <div>
+    <div class='reaction'>
+      <button class='reaction__button' @click="doReact('HEART', article.slug)">
         <img
-          class="reaction__icon"
+          class='reaction__icon'
           :class="{
             'reaction__icon--reacted': reactedByMe('HEART'),
           }"
-          src="~/static/reactions/HEART.png"
+          src='~/static/reactions/HEART.png'
         />
-        <span class="reaction__count text-dark-secondary">{{
+        <span class='reaction__count text-dark-secondary'>{{
           reactionCount('HEART')
         }}</span>
       </button>
@@ -205,16 +205,16 @@
         </a>
 
         <div>
-          <p class="text-sm text-gray-600">পার্মালিংক</p>
+          <p class='text-sm text-gray-600'>পার্মালিংক</p>
           <input
-            type="text"
-            value="dddd"
-            class="w-full p-2 border focus:outline-none"
+            type='text'
+            value='dddd'
+            class='w-full p-2 border focus:outline-none'
           />
         </div>
       </div>
     </div>
-  </Fragment>
+  </div>
 </template>
 
 <script>
