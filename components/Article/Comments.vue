@@ -32,13 +32,15 @@
         Submit
       </button>
     </div>
+<template v-for='comment in comments'>
 
-    <article-comment
-      v-for="comment in comments"
-      :comment="comment"
-      :key="comment.id"
-      :level="0"
-    />
+  <article-comment
+
+    :comment='comment'
+    :key='comment.id'
+    :level='0'
+  />
+</template>
         <div
       class="flex items-center justify-center h-full"
       v-if="$fetchState.pending"
@@ -80,7 +82,7 @@ export default {
       `/api/articles/${this.$route.params.articleSlug}/comments?page=${this.pageMeta.current_page}`
     )
     // const comment = await this.$axios.$get(`/api/articles/${this.$route.params.articleSlug}/comments?page=${1}`)
-    
+
     this.articleComments = this.articleComments.concat(data)
     this.pageMeta = { current_page, last_page }
     this.$store.commit('comment/SET_COMMENTS', this.articleComments)
