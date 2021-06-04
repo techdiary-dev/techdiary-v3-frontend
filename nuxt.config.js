@@ -110,26 +110,31 @@ export default {
   },
 
   auth: {
+    cookie: {
+      options: {
+        sameSite: 'lax'
+      }
+    },
     strategies: {
       local: {
         token: {
           propertyName: 'token',
           required: true,
-          type: 'Bearer',
+          type: 'Bearer'
         },
         endpoints: {
           login: { url: '/api/auth/login', method: 'post' },
           logout: { url: '/api/auth/logout', method: 'post' },
-          user: { url: '/api/user', method: 'get', propertyName: null },
-        },
-        redirect: {
-          login: '/',
-          logout: '/',
-          callback: '/',
-          home: '/dashboard/diaries',
-        },
-      },
+          user: { url: '/api/user', method: 'get', propertyName: null }
+        }
+      }
     },
+    redirect: {
+      login: '/',
+      logout: '/',
+      callback: '/',
+      home: '/dashboard/diaries'
+    }
   },
 
   moment: {

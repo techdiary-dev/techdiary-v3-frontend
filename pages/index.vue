@@ -6,23 +6,23 @@
 
     <editor-fake-editor />
 
-    <div v-if="$fetchState.pending">
-      <skelleton-article-card v-for="i in new Array(6)" :key="i" />
+    <div v-if='$fetchState.pending'>
+      <skelleton-article-card v-for='i in new Array(6)' :key='i' />
+      <div class='grid place-content-center'>
+
+        <loader-spin />
+      </div>
     </div>
 
     <div v-else>
       <ArticleCard
-        v-for="article in articles"
-        class="mb-5"
-        :key="article.id"
-        :article="article"
+        v-for='article in articles'
+        class='mb-5'
+        :key='article.id'
+        :article='article'
       />
-      <div
-        v-observe-visibility="visibilityChanged"
-        class="flex items-center justify-center"
-      >
-        <loader-spin />
-      </div>
+
+      <div v-observe-visibility='visibilityChanged' />
     </div>
   </div>
 </template>
@@ -59,7 +59,6 @@ export default {
   },
   data: () => ({
     articles: [],
-    initialLoading: true,
     pageMeta: {
       current_page: 1,
       last_page: null,
@@ -69,27 +68,24 @@ export default {
     try {
       const {
         data,
-        meta: { current_page, last_page },
-      } = await this.$axios.$get('/api/articles')
+        meta: { current_page, last_page }
+      } = await this.$axios.$get(`/api/articles?page=${this.pageMeta.current_page}`)
 
-      // this.initialLoading = false
-
-      this.articles = data
+      this.articles = this.articles.concat(data)
       this.pageMeta = { current_page, last_page }
     } catch (error) {}
   },
   methods: {
-    async loadMore() {
-      const { data: articles } = await this.$axios.$get(
-        `/api/articles?page=${this.pageMeta.current_page}`
-      )
-      this.articles.push(...articles)
-    },
+
     async visibilityChanged(isVisible) {
-      if (!isVisible) return
-      if (this.pageMeta.currentPage >= this.pageMeta.lastPage) return
-      this.pageMeta.current_page++
-      await this.loadMore()
+      if (isVisible) {
+        if (this.pageMeta.current_page >= this.pageMeta.last_page) {
+          return
+        }
+        this.pageMeta.current_page++
+
+        await this.$fetch()
+      }
     },
   },
 }

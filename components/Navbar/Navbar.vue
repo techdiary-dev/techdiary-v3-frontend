@@ -12,7 +12,6 @@
       <div class='flex items-center justify-end'>
         <navbar-links class='mr-5' />
         <client-only>
-
           <navbar-user-action />
         </client-only>
       </div>

@@ -101,7 +101,7 @@ export default {
   methods: {
     colorModeSwitcher() {
       this.$colorMode.preference =
-        this.$colorMode.value == 'dark' ? 'light' : 'dark'
+        this.$colorMode.value === 'dark' ? 'light' : 'dark'
     },
     goToEditor() {
       if (this.$auth.loggedIn) {

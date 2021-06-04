@@ -45,8 +45,8 @@ export default {
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620056845/static-assets/tag-icons/dart.svg',
-        label: 'dart',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782233/static-assets/tag-icons/zydwlue3nnnbeyyl8pum.svg',
+        label: 'dart'
       },
       {
         icon:
@@ -110,8 +110,8 @@ export default {
       },
       {
         icon:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616873444/static-assets/tag-icons/kubernetes.svg',
-        label: 'kubernetes',
+          'https://res.cloudinary.com/techdiary-dev/image/upload/v1620782237/static-assets/tag-icons/odut7ffl8spzdkbhceeu.svg',
+        label: 'kubernetes'
       },
       {
         icon:
