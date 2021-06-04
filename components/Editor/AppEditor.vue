@@ -53,23 +53,23 @@
             <span>সেটিংস</span>
           </button>
           <button
-            class="flex items-center justify-center px-5 py-1 rounded-full bg-primary"
-            @click="save"
+            class='flex items-center justify-center px-5 py-1 rounded-full bg-primary'
+            @click='openOptions'
           >
             <svg
-              v-if="loading"
-              class="w-5 h-5 mr-2 animate-spin"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
+              v-if='loading'
+              class='w-5 h-5 mr-2 animate-spin'
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
             >
               <circle
-                class="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                stroke-width="4"
+                class='opacity-25'
+                cx='12'
+                cy='12'
+                r='10'
+                stroke='currentColor'
+                stroke-width='4'
               ></circle>
               <path
                 class="opacity-75"
@@ -134,8 +134,8 @@
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
+              stroke-width='2'
+              d='M6 18L18 6M6 6l12 12'
             />
           </svg>
         </button>
@@ -145,12 +145,12 @@
       </div>
       <!-- Title -->
       <input
-        type="text"
-        class="w-full h-full my-3 text-3xl font-bold bg-transparent text-dark focus:outline-none"
-        placeholder="ডায়েরির শিরোনাম"
-        v-model="article.title"
+        type='text'
+        class='w-full h-full my-3 text-3xl font-bold bg-transparent text-dark focus:outline-none border-0 focus:ring-0'
+        placeholder='ডায়েরির শিরোনাম'
+        v-model='article.title'
       />
-      <div id="techdiary-editor" class="text-dark td-editor"></div>
+      <div id='techdiary-editor' class='text-dark td-editor'></div>
     </div>
     <!-- ======================================================= -->
     <!-- Editor Content end -->
@@ -266,10 +266,17 @@ export default {
       }
     }
   },
+  beforeDestroy() {
+    this.editor?.destroy()
+  },
+  updated() {
+    console.log({ title: this.article.title, body: this.article.body })
+  },
   mounted() {
     const EditorJS = require('@editorjs/editorjs')
     this.editor = new EditorJS({
       data: { blocks: this.article.body },
+      logLevel: 'ERROR',
       /**
        * Id of Element that should contain Editor instance
        */
@@ -362,11 +369,9 @@ export default {
               codepen: true,
               codesandbox: {
                 regex: /https?:\/\/codesandbox.io\/s\/([^\/\?\&]*)/,
-                embedUrl: 'https://codesandbox.io/embed/<%= remote_id %>?fontsize=14&hidenavigation=1&theme=dark&view=preview',
+                embedUrl: 'https://codesandbox.io/embed/<%= remote_id %>?codemirror=1&fontsize=14&hidenavigation=1&theme=dark&view=preview',
                 html: '<iframe \n' +
                   '     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"\n' +
-                  '     title="article-progress-on-scroll"\n' +
-                  '     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"\n' +
                   '     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"\n' +
                   '   ></iframe>',
                 height: 300,
@@ -384,6 +389,20 @@ export default {
       }, // tools
       onChange: (api) => {
         api.saver.save().then((newData) => {
+          const newDataImages = newData.blocks.filter(block => block.type === 'image')
+          const currentImages = this.article.body.filter(block => block.type === 'image')
+          if (newDataImages.length < currentImages.length) {
+            const difference = currentImages.filter(image => {
+              let shouldReturn = false
+              newDataImages.forEach(newImage => {
+                if (newImage.data.url === image.data.url) {
+                  shouldReturn = true
+                }
+              })
+              return shouldReturn
+            })
+            // console.log({ difference })
+          }
           this.article.body = newData.blocks
         })
       },

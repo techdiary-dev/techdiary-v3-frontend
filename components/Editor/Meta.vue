@@ -1,6 +1,6 @@
 <template>
   <div class='flex flex-col min-h-[80vh] overflow-y-auto'>
-    <div class='flex justify-between'>
+    <section class='flex justify-between'>
       <button @click='closeMeta' class='grid place-content-center bg-red-500 text-white rounded-md p-2'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 18L18 6M6 6l12 12' />
@@ -35,30 +35,39 @@
         <span v-if='loading'>অপেক্ষা করুন</span>
         <span v-else>সেভ করুন</span>
       </button>
-    </div>
-    <div class='mt-4'>
+    </section>
+    <section class='my-4'>
+      <h3 class='text-dark text-xl font-bold tracking-relaxed my-3'>আপনি কি ডায়েরি পাবলিশ করার জন্যে প্রস্তুত? </h3>
+      <p class='text-dark leading-relaxed'>সব কিছু ঠিকমত দেখে নিন। ডায়েরি যদি প্রথম পাতায় দেখাতে চান, তাহলে <strong>"ডায়েরি
+        পাবলিশ
+        করুন"</strong> এর পাশে
+        টিক চিহ্ন দিন</p>
+    </section>
 
-      <div class='my-5'>
-        <multi-select
-          placeholder='ট্যাগ নির্বাচন করুন'
-          selectLabel='নির্বাচন করতে এন্টার চাপুন'
-          tagPlaceholder='ট্যাগ তৈরি করতে এন্টার চাপুন'
-          :options='tagOptions'
-          :multiple='true'
-          :hideSelected='true'
-          :taggable='true'
-          :max='10'
-          @tag='createNewTag'
-          track-by='id'
-          label='name'
-          v-model='article.tags'
-          :closeOnSelect='false'
-        ></multi-select>
-      </div>
-      <div class='flex items-center text-dark ml-2'>
-        <input type='checkbox' class='text-primary rounded' id='isPublished' v-model='article.isPublished' />
-        <label class='ml-2' for='isPublished'>Public Diary</label>
-      </div>
+
+    <div class='my-3 px-3 py-4 border border-gray-500 rounded '>
+      <label for='multi-tag' class='text-dark text-lg font-bold'>ট্যাগ</label>
+      <multi-select
+        id='multi-tag'
+        placeholder='ট্যাগ নির্বাচন করুন'
+        class='mt-3'
+        selectLabel='নির্বাচন করতে এন্টার চাপুন'
+        tagPlaceholder='ট্যাগ তৈরি করতে এন্টার চাপুন'
+        :options='tagOptions'
+        :multiple='true'
+        :hideSelected='true'
+        :taggable='true'
+        :max='10'
+        @tag='createNewTag'
+        track-by='id'
+        label='name'
+        v-model='article.tags'
+        :closeOnSelect='false'
+      ></multi-select>
+    </div>
+    <div class='flex items-center text-dark ml-2'>
+      <input type='checkbox' class='text-primary rounded' id='isPublished' v-model='article.isPublished' />
+      <label class='ml-2' for='isPublished'>ডায়েরি পাবলিশ করুন</label>
     </div>
 
 
