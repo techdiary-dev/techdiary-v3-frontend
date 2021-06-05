@@ -6,15 +6,7 @@
 
     <editor-fake-editor />
 
-    <div v-if='$fetchState.pending'>
-      <skelleton-article-card v-for='i in new Array(6)' :key='i' />
-      <div class='grid place-content-center'>
-
-        <loader-spin />
-      </div>
-    </div>
-
-    <div v-else>
+    <div>
       <ArticleCard
         v-for='article in articles'
         class='mb-5'
@@ -23,6 +15,13 @@
       />
 
       <div v-observe-visibility='visibilityChanged' />
+    </div>
+    <div v-if='$fetchState.pending'>
+      <skelleton-article-card v-for='i in new Array(6)' :key='i' />
+      <div class='grid place-content-center'>
+
+        <loader-spin />
+      </div>
     </div>
   </div>
 </template>
