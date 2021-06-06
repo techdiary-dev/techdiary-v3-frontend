@@ -30,40 +30,45 @@
 <script>
 export default {
   layout: 'home',
-  head: {
-    title: 'নীড়',
-    meta: [
-      {
-        name: 'description',
-        content: `টেকডায়েরি | বাংলার প্রোগ্রামিং নেটওয়ার্ক`,
-      },
-      {
-        property: 'og:title',
-        content: `টেকডায়েরি | বাংলার প্রোগ্রামিং নেটওয়ার্ক`,
-      },
-      {
-        property: 'og:image',
-        content:
-          'https://res.cloudinary.com/techdiary-dev/image/upload/v1616454527/static-assets/ysbycrhmbjdxqirpskdl.jpg',
-      },
-      {
-        property: 'og:image:width',
-        content: '1200',
-      },
+  head() {
+    return {
+      title: 'নীড়',
+      meta: [
+        {
+          name: 'description',
+          content: `টেকডায়েরি | বাংলার প্রোগ্রামিং নেটওয়ার্ক`
+        },
+        {
+          property: 'og:title',
+          content: `টেকডায়েরি | বাংলার প্রোগ্রামিং নেটওয়ার্ক`
+        },
+        {
+          property: 'og:image',
+          content:
+            'https://res.cloudinary.com/techdiary-dev/image/upload/v1616454527/static-assets/ysbycrhmbjdxqirpskdl.jpg'
+        },
+        {
+          property: 'og:image:width',
+          content: '1200'
+        },
 
-      {
-        property: 'og:image:height',
-        content: '630',
-      },
-    ],
+        {
+          property: 'og:image:height',
+          content: '630'
+        }
+      ]
+    }
   },
-  data: () => ({
-    articles: [],
-    pageMeta: {
-      current_page: 1,
-      last_page: null,
-    },
-  }),
+  data() {
+    return {
+      articles: [],
+      pageMeta: {
+        current_page: 1,
+        last_page: null
+      }
+    }
+
+  },
   async fetch() {
     try {
       const {
@@ -73,7 +78,9 @@ export default {
 
       this.articles = this.articles.concat(data)
       this.pageMeta = { current_page, last_page }
-    } catch (error) {}
+    } catch (error) {
+      console.log({ error })
+    }
   },
   methods: {
 
