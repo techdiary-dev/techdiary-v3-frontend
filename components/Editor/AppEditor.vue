@@ -352,7 +352,7 @@ export default {
         linkTool: {
           class: require('@editorjs/link'),
           config: {
-            endpoint: `https://functions.techdiary.dev/metafetcher`
+            endpoint: `${process.env.NUXT_ENV_SERVERLESS_URL}/metafetcher`
           }
         },
         marker: {
@@ -395,7 +395,7 @@ export default {
             const difference = currentImages.filter(image => !newDataImages.includes(image))
             console.log({ difference })
             if (difference.length > 0) {
-              await this.$axios.$post('http://localhost:8888/deleteimage', {
+              await this.$axios.$post(`${process.env.NUXT_ENV_SERVERLESS_URL}/deleteimage`, {
                   asset_url: difference[0]
                 }
               )
