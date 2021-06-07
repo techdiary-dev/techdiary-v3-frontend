@@ -5,7 +5,7 @@
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect x='4' y='52' height='373' width='200' rx='6' class='fill-current' />
+    <rect x='4' y='52' height='373' rx='6' class='w-full fill-current' />
 
     <rect x="4" y="440" width="583" height="20" rx="6" class="fill-current" />
     <rect x="4" y="468" width="359" height="15" rx="6" class="fill-current" />
