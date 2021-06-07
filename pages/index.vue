@@ -70,6 +70,7 @@ export default {
     }
 
   },
+  fetchOnServer: false,
   async fetch() {
     try {
       const {
@@ -84,7 +85,6 @@ export default {
     }
   },
   methods: {
-
     async visibilityChanged(isVisible) {
       if (isVisible) {
         if (this.pageMeta.current_page >= this.pageMeta.last_page) {
