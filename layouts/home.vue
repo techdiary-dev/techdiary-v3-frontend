@@ -7,7 +7,7 @@
           <sidebar-left />
         </section>
         <section class="col-span-12 md:col-span-6">
-          <Nuxt />
+          <Nuxt keep-alive />
         </section>
 
         <section class="hidden col-span-12 md:block md:col-span-3">

@@ -16,10 +16,12 @@
 
       <div v-observe-visibility='visibilityChanged' />
     </div>
-    <div v-if='$fetchState.pending'>
-      <skelleton-article-card v-for='i in new Array(6)' :key='i' />
-      <div class='grid place-content-center'>
+    <div>
+      <template v-for='i in new Array(4)'>
 
+        <skelleton-article-card :key='"article-card " + i' />
+      </template>
+      <div class='grid place-content-center'>
         <loader-spin />
       </div>
     </div>
@@ -67,6 +69,11 @@ export default {
       }
     }
 
+  },
+  activated() {
+    if (this.$fetchState.timestamp <= Date.now() - (1000 * 60 * 60)) {
+      this.$fetch()
+    }
   },
   async fetch() {
     try {

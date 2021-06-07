@@ -28,7 +28,7 @@
     "lodash.clonedeep": "^4.5.0",
     "lodash.debounce": "^4.0.8",
     "markdown-it": "^12.0.4",
-    "nuxt": "^2.2.0",
+    "nuxt": "^2.15.6",
     "pusher-js": "^7.0.3",
     "sweetalert": "^2.1.2",
     "vue-clickaway": "^2.2.2",

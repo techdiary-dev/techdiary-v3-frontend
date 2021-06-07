@@ -352,7 +352,7 @@ export default {
         linkTool: {
           class: require('@editorjs/link'),
           config: {
-            endpoint: `https://cocky-brattain-fbeacf.netlify.app/.netlify/functions/metafetcher`
+            endpoint: `https://functions.techdiary.dev/metafetcher`
           }
         },
         marker: {
@@ -388,20 +388,18 @@ export default {
         }
       }, // tools
       onChange: (api) => {
-        api.saver.save().then((newData) => {
-          const newDataImages = newData.blocks.filter(block => block.type === 'image')
-          const currentImages = this.article.body.filter(block => block.type === 'image')
+        api.saver.save().then(async (newData) => {
+          const newDataImages = newData.blocks.filter(block => block.type === 'image').map(block => block.data.file.url)
+          const currentImages = this.article.body.filter(block => block.type === 'image').map(block => block.data.file.url)
           if (newDataImages.length < currentImages.length) {
-            const difference = currentImages.filter(image => {
-              let shouldReturn = false
-              newDataImages.forEach(newImage => {
-                if (newImage.data.url === image.data.url) {
-                  shouldReturn = true
+            const difference = currentImages.filter(image => !newDataImages.includes(image))
+            console.log({ difference })
+            if (difference.length > 0) {
+              await this.$axios.$post('http://localhost:8888/deleteimage', {
+                  asset_url: difference[0]
                 }
-              })
-              return shouldReturn
-            })
-            // console.log({ difference })
+              )
+            }
           }
           this.article.body = newData.blocks
         })
