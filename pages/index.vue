@@ -70,11 +70,6 @@ export default {
     }
 
   },
-  activated() {
-    if (this.$fetchState.timestamp <= Date.now() - (1000 * 60 * 60)) {
-      this.$fetch()
-    }
-  },
   async fetch() {
     try {
       const {

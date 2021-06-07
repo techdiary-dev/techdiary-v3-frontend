@@ -89,7 +89,6 @@ export default {
   data() {
     return {
       tagOptions: [],
-      loading: false,
     }
   },
   async mounted() {
