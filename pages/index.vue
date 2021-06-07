@@ -16,7 +16,7 @@
 
       <div v-observe-visibility='visibilityChanged' />
     </div>
-    <div>
+    <div v-if='$fetchState.pending'>
       <template v-for='i in new Array(4)'>
 
         <skelleton-article-card :key='"article-card " + i' />
