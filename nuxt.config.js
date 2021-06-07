@@ -63,11 +63,9 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    ['@nuxtjs/dotenv', { systemvars: true }],
     '@nuxtjs/color-mode',
     '@nuxtjs/moment',
     // '@nuxtjs/google-analytics',
-    '@nuxt/image',
     '@nuxtjs/svg'
   ],
   toast: {
@@ -89,16 +87,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     '@nuxtjs/cloudinary',
-    // '@nuxtjs/sentry',
     '@nuxtjs/toast',
     '@nuxt/content'
-    // [
-    //   '@netsells/nuxt-hotjar',
-    //   {
-    //     id: 1886608,
-    //     sv: 6
-    //   }
-    // ]
   ],
 
   axios: {

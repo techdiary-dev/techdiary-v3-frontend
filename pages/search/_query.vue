@@ -40,11 +40,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import SyncLoader from 'vue-spinner/src/SyncLoader.vue'
 export default {
-  components: {
-    SyncLoader
-  },
   head() {
     return {
       title: 'Search'
