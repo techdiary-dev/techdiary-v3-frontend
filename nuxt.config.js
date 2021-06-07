@@ -66,7 +66,7 @@ export default {
     ['@nuxtjs/dotenv', { systemvars: true }],
     '@nuxtjs/color-mode',
     '@nuxtjs/moment',
-    '@nuxtjs/google-analytics',
+    // '@nuxtjs/google-analytics',
     '@nuxt/image',
     '@nuxtjs/svg'
   ],
@@ -91,14 +91,14 @@ export default {
     '@nuxtjs/cloudinary',
     // '@nuxtjs/sentry',
     '@nuxtjs/toast',
-    '@nuxt/content',
-    [
-      '@netsells/nuxt-hotjar',
-      {
-        id: 1886608,
-        sv: 6
-      }
-    ]
+    '@nuxt/content'
+    // [
+    //   '@netsells/nuxt-hotjar',
+    //   {
+    //     id: 1886608,
+    //     sv: 6
+    //   }
+    // ]
   ],
 
   axios: {
@@ -139,19 +139,19 @@ export default {
 
   moment: {
     defaultLocale: 'bn',
-    locales: ['bn'],
+    locales: ['bn']
   },
 
   tailwindcss: {
-    cssPath: '~/assets/styles/app.scss',
+    cssPath: '~/assets/styles/app.scss'
   },
   cloudinary: {
     cloudName: process.env.NUXT_APP_CLOUDINARY_CLOUDNAME,
-    useComponent: true,
+    useComponent: true
   },
-  googleAnalytics: {
-    id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_ID,
-  },
+  // googleAnalytics: {
+  //   id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_ID,
+  // },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
@@ -159,7 +159,7 @@ export default {
       if (ctx.isDev) {
         config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
       }
-    },
+    }
   },
 
   content: {
