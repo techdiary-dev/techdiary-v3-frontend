@@ -269,9 +269,9 @@ export default {
   beforeDestroy() {
     this.editor?.destroy()
   },
-  updated() {
-    console.log({ title: this.article.title, body: this.article.body })
-  },
+  // updated() {
+  //   console.log({ title: this.article.title, body: this.article.body })
+  // },
   mounted() {
     const EditorJS = require('@editorjs/editorjs')
     this.editor = new EditorJS({
@@ -392,9 +392,8 @@ export default {
           const newDataImages = newData.blocks.filter(block => block.type === 'image').map(block => block.data.file.url)
           const currentImages = this.article.body.filter(block => block.type === 'image').map(block => block.data.file.url)
           if (newDataImages.length < currentImages.length) {
-            const difference = currentImages.filter(image => !newDataImages.includes(image))
-            console.log({ difference })
-            if (difference.length > 0) {
+            const difference = currentImages.filter(image => !newDataImages.includes(image)).filter(image => !image)
+            if (difference.length > 0 && difference[0]) {
               await this.$axios.$post(`${process.env.NUXT_ENV_SERVERLESS_URL}/deleteimage`, {
                   asset_url: difference[0]
                 }
