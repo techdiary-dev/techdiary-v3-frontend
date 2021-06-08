@@ -6,7 +6,7 @@ const wrap = (code, lang) =>
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    lang: 'bn',
+    htmlAttr: { lang: 'bn' },
     titleTemplate: '%s - Tech Diary',
     meta: [
       { charset: 'utf-8' },
@@ -14,9 +14,9 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'বাংলার প্রোগ্রামিং নেটওয়ার্ক',
+        content: 'বাংলার প্রোগ্রামিং নেটওয়ার্ক'
       },
-      { hid: 'theme-color', name: 'theme-color', content: '#1F2936' },
+      { hid: 'theme-color', name: 'theme-color', content: '#1F2936' }
     ],
     link: [
       {
