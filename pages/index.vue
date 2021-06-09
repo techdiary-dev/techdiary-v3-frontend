@@ -44,9 +44,17 @@ export default {
           content: `টেকডায়েরি | বাংলার প্রোগ্রামিং নেটওয়ার্ক`
         },
         {
+          property: 'og:url',
+          content: 'https://www.techdiary.dev'
+        },
+        {
+          property: 'og:description',
+          content: `টেকডায়েরি | বাংলার প্রোগ্রামিং নেটওয়ার্ক`
+        },
+        {
           property: 'og:image',
           content:
-            'https://res.cloudinary.com/techdiary-dev/image/upload/v1616454527/static-assets/ysbycrhmbjdxqirpskdl.jpg'
+            'https://res.cloudinary.com/techdiary-dev/image/fetch/c_scale,f_auto,q_auto,w_1200/https://user-images.githubusercontent.com/7611746/82744130-38b0fd80-9d96-11ea-8223-62d62a56566f.png'
         },
         {
           property: 'og:image:width',
