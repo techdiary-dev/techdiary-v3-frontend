@@ -14,9 +14,9 @@
         :article="article"
       />
 
-      <div v-observe-visibility="visibilityChanged" />
+      <div v-observe-visibility='visibilityChanged' />
     </div>
-    <!-- <div v-if='$fetchState.pending'>
+    <div v-if='$fetchState.pending'>
       <template v-for='i in new Array(4)'>
 
         <skelleton-article-card :key='"article-card " + i' />
@@ -24,7 +24,7 @@
       <div class='grid place-content-center'>
         <loader-spin />
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -77,7 +77,6 @@ export default {
       },
     }
   },
-  fetchOnServer: false,
   async fetch() {
     try {
       const {
