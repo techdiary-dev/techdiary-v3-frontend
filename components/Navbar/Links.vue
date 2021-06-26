@@ -21,7 +21,7 @@
 
     <!-- Search icon -->
     <nuxt-link
-      class="flex items-center justify-center w-8 h-8 transition duration-150 bg-gray-600 rounded-full md:hidden hover:bg-gray-200 focus:outline-none"
+      class="flex items-center justify-center w-8 h-8 transition duration-150 bg-gray-600 rounded-full  md:hidden hover:bg-gray-200 focus:outline-none"
       :to="{ name: 'search' }"
     >
       <svg
@@ -40,25 +40,25 @@
     </nuxt-link>
     <client-only>
       <!-- new article link -->
-      <button @click='goToEditor' class='navbar-link' v-if='$auth.loggedIn'>
+      <button @click="goToEditor" class="navbar-link" v-if="$auth.loggedIn">
         <svg
-          width='20'
-          class='text-gray-300'
-          xmlns='http://www.w3.org/2000/svg'
-          fill='none'
-          viewBox='0 0 24 24'
-          stroke='currentColor'
+          width="20"
+          class="text-gray-300"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
           <path
-            stroke-linecap='round'
-            stroke-linejoin='round'
-            stroke-width='2'
-            d='M12 6v6m0 0v6m0-6h6m-6 0H6'
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
           ></path>
         </svg>
-    </button>
+      </button>
 
-      <button @click="colorModeSwitcher" class="navbar-link">
+      <!-- <button @click="colorModeSwitcher" class="navbar-link">
         <svg
           v-if="$colorMode.value === 'light'"
           class="text-gray-300"
@@ -91,7 +91,7 @@
             d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
           />
         </svg>
-      </button>
+      </button> -->
     </client-only>
   </div>
 </template>
@@ -99,10 +99,10 @@
 <script>
 export default {
   methods: {
-    colorModeSwitcher() {
-      this.$colorMode.preference =
-        this.$colorMode.value === 'dark' ? 'light' : 'dark'
-    },
+    // colorModeSwitcher() {
+    //   this.$colorMode.preference =
+    //     this.$colorMode.value === 'dark' ? 'light' : 'dark'
+    // },
     goToEditor() {
       if (this.$auth.loggedIn) {
         this.$router.push({ name: 'dashboard-diaries-new' })

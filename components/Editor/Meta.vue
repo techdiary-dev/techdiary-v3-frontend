@@ -61,7 +61,7 @@
     </section>
 
     <div
-      class="flex items-center p-3 ml-2 border border-gray-300 border-dashed rounded-md  text-dark"
+      class="flex items-center p-3 rounded-md text-dark"
       :class="{
         'bg-yellow-300': !article.isPublished,
         'bg-green-300': article.isPublished,
@@ -77,12 +77,12 @@
         class="flex items-center justify-between w-full ml-2 cursor-pointer"
         for="isPublished"
       >
-        <span>ডায়েরি পাবলিশ করুন</span>
+        <span class="text-gray-800">ডায়েরি পাবলিশ করুন</span>
 
         <svg
           v-if="!article.isPublished"
           xmlns="http://www.w3.org/2000/svg"
-          class="w-5 h-5"
+          class="w-5 h-5 text-gray-800"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -95,7 +95,7 @@
         <svg
           v-if="article.isPublished"
           xmlns="http://www.w3.org/2000/svg"
-          class="w-5 h-5"
+          class="w-5 h-5 text-gray-800"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -108,7 +108,7 @@
       </label>
     </div>
 
-    <div class="px-3 py-4 my-3">
+    <div class="my-3">
       <label for="multi-tag" class="text-lg font-bold text-dark">ট্যাগ</label>
       <multi-select
         id="multi-tag"

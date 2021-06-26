@@ -63,7 +63,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode',
+    // '@nuxtjs/color-mode',
     '@nuxtjs/moment',
     // '@nuxtjs/google-analytics',
     '@nuxtjs/svg'
@@ -139,9 +139,9 @@ export default {
     cloudName: process.env.NUXT_APP_CLOUDINARY_CLOUDNAME,
     useComponent: true
   },
-  // googleAnalytics: {
-  //   id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_ID,
-  // },
+  googleAnalytics: {
+    id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_ID,
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

@@ -1,7 +1,7 @@
 <template>
   <div class="fixed top-0 left-0 z-50 w-full">
     <div
-      class="flex items-center justify-between px-4 py-1 bg-gray-800 shadow-sm md:px-10 h-14"
+      class="flex items-center justify-between px-4 py-1 bg-gray-800 shadow-sm  md:px-10 h-14"
     >
       <nuxt-link :to="{ name: 'index' }">
         <navbar-logo />
@@ -9,8 +9,8 @@
 
       <navbar-search />
 
-      <div class='flex items-center justify-end'>
-        <navbar-links class='mr-5' />
+      <div class="flex items-center justify-end">
+        <navbar-links class="mr-5" />
         <client-only>
           <navbar-user-action />
         </client-only>
