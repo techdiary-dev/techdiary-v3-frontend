@@ -56,7 +56,10 @@
       </h3>
       <p class="leading-relaxed text-dark">
         সব কিছু ঠিকমত দেখে নিন। ডায়েরি যদি প্রথম পাতায় দেখাতে চান, তাহলে
-        <strong>"ডায়েরি পাবলিশ করুন"</strong> এর পাশে টিক চিহ্ন দিন
+        <strong class="text-gray-700 bg-yellow-300 rounded-md"
+          >"ডায়েরি পাবলিশ করুন"</strong
+        >
+        এর পাশে টিক চিহ্ন দিন
       </p>
     </section>
 
