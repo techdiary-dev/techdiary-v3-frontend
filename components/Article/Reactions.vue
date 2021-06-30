@@ -1,15 +1,15 @@
 <template>
   <div>
-    <div class='reaction'>
-      <button class='reaction__button' @click="doReact('HEART', article.slug)">
+    <div class="reaction">
+      <button class="reaction__button" @click="doReact('HEART', article.slug)">
         <img
-          class='reaction__icon'
+          class="reaction__icon"
           :class="{
             'reaction__icon--reacted': reactedByMe('HEART'),
           }"
-          src='~/static/reactions/HEART.png'
+          src="~/static/reactions/HEART.png"
         />
-        <span class='reaction__count text-dark-secondary'>{{
+        <span class="reaction__count text-dark-secondary">{{
           reactionCount('HEART')
         }}</span>
       </button>
@@ -137,8 +137,8 @@
         </svg>
       </button>
       <nuxt-link
-        class='text-dark'
-        v-if='$auth.loggedIn && $auth.user.id == article.user.id'
+        class="text-dark"
+        v-if="$auth.loggedIn && $auth.user.id == article.user.id"
         :to="{
           name: 'dashboard-diaries-slug-edit',
           params: { slug: article.slug },
@@ -147,7 +147,6 @@
         সংস্কার
       </nuxt-link>
 
-      <progress-ring stroke='5' radius='30' :progress='progress ? progress : 0' />
       <!-- <button
         title="share"
         class="focus:outline-none"
@@ -162,7 +161,7 @@
       <!-- Share panel -->
       <div
         v-if="shareOpen"
-        class="absolute right-0 z-50 px-2 py-3 space-y-4 bg-white border rounded-sm shadow-sm w-52 top-10"
+        class="absolute right-0 z-50 px-2 py-3 space-y-4 bg-white border rounded-sm shadow-sm  w-52 top-10"
       >
         <a href="#" class="flex items-center space-x-2">
           <svg class="w-4 h-4 text-gray-600 fill-current" viewBox="0 0 512 512">
@@ -205,11 +204,11 @@
         </a>
 
         <div>
-          <p class='text-sm text-gray-600'>পার্মালিংক</p>
+          <p class="text-sm text-gray-600">পার্মালিংক</p>
           <input
-            type='text'
-            value='dddd'
-            class='w-full p-2 border focus:outline-none'
+            type="text"
+            value="dddd"
+            class="w-full p-2 border focus:outline-none"
           />
         </div>
       </div>
@@ -225,9 +224,9 @@ export default {
   data() {
     return {
       reactions: this.article.reactions,
-      shareOpen: false
+      shareOpen: false,
     }
-  }
+  },
 }
 </script>
 

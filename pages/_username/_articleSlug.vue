@@ -13,7 +13,7 @@
       </alert>
 
       <div class="fixed hidden w-32 md:block top-25">
-        <ArticleReactions :article="article" :progress="articleProgress" />
+        <ArticleReactions :article="article" />
       </div>
       <div class="mx-auto md:w-8/12">
         <div v-if="article.thumbnail" class="overflow-hidden rounded-md">
@@ -60,8 +60,6 @@
           :id="article.id"
           v-html="article.body"
         />
-
-        <article-comments />
       </div>
     </div>
   </div>
@@ -131,21 +129,23 @@ export default {
       updatedCount: 0,
     }
   },
-  mounted() {
-    window.addEventListener('scroll', this.changeProgressCircleOnScroll)
-  },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.changeProgressCircleOnScroll)
-  },
+  // mounted() {
+  //   window.addEventListener('scroll', this.changeProgressCircleOnScroll)
+  // },
+  // beforeDestroy() {
+  //   window.removeEventListener('scroll', this.changeProgressCircleOnScroll)
+  // },
   async fetch() {
     try {
       const { data: article } = await this.$axios.get(
         `api/articles/${this.$route.params.articleSlug}`
       )
       article.data.body = this.editorJsParser(article.data.body)
+      // article.data.body = article.data.body
       this.article = article.data
       this.reactions = article.data.reactions
     } catch (error) {
+      console.log(error)
       this.$nuxt.error({ statusCode: 400, message: 'ডায়েরি খুঁজে পাওয়া যায়নি' })
     }
   },

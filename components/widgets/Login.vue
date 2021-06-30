@@ -5,7 +5,7 @@
     <div>
       <button
         @click="socialLogin('github')"
-        class="flex items-center justify-center w-full py-2 mb-4 text-lg text-white transition duration-150 bg-gray-700 rounded hover:opacity-95"
+        class="flex items-center justify-center w-full py-2 mb-4 text-lg text-white transition duration-150 bg-gray-700 rounded  hover:opacity-95"
       >
         <svg
           v-if="!loadingGithub"
@@ -47,7 +47,7 @@
 
       <button
         @click="socialLogin('google')"
-        class="flex items-center justify-center w-full py-2 mb-4 text-lg text-white transition duration-150 bg-red-500 rounded font-bangla hover:opacity-95"
+        class="flex items-center justify-center w-full py-2 mb-4 text-lg text-white transition duration-150 bg-red-500 rounded  font-bangla hover:opacity-95"
       >
         <svg
           v-if="!loadingGoogle"

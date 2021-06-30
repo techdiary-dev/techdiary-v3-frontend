@@ -29,7 +29,7 @@ export default {
   methods: {
     editorJsParser(blocks) {
       var html = ''
-      blocks.forEach(function(block) {
+      blocks.forEach(function (block) {
         if (block.type === 'header') {
           /**
            * --------------------------------------------------
@@ -57,23 +57,24 @@ export default {
            *  Block: Image
            * --------------------------------------------------
            */
-          let publicId = block.data.file.url.split('/').slice(-2).join('/')
-          const imageUrl = `https://res.cloudinary.com/techdiary-dev/image/upload/c_scale,f_auto,q_auto/v1/${publicId}`
-          const title = block.data.caption ? block.data.caption : 'article-image'
-          html += `
-        <figure class='${
-            block.data.stretched ? 'image--stretched' : 'image--normal'
-          }'>
-          <img src='${
-            imageUrl
-          }' title='Techdiary: ${title}' alt='Techdiary: ${title}' loading='lazy' />
-        ${
-            block.data.caption
-              ? `<figcaption>${block.data.caption}</figcaption>`
-              : ''
+
+          if (block.data?.file?.url) {
+            let publicId = block.data.file.url.split('/').slice(-2).join('/')
+            const imageUrl = `https://res.cloudinary.com/techdiary-dev/image/upload/c_scale,f_auto,q_auto/v1/${publicId}`
+            const title = block.data.caption ? block.data.caption : 'article-image'
+            html += `
+          <figure class='${block.data.stretched ? 'image--stretched' : 'image--normal'
+              }'>
+            <img src='${imageUrl
+              }' title='Techdiary: ${title}' alt='Techdiary: ${title}' loading='lazy' />
+          ${block.data.caption
+                ? `<figcaption>${block.data.caption}</figcaption>`
+                : ''
+              }
+            </figure/>
+          `
           }
-          </figure/>
-        `
+
         } else if (block.type === 'embed') {
           /**
            * --------------------------------------------------
@@ -124,11 +125,10 @@ export default {
           ${block.data.text}
         </p>
 
-        ${
-            block.data.caption !== null
+        ${block.data.caption !== null
               ? `<p class='author'>- ${block.data.caption}</p>`
               : ''
-          }
+            }
       </blockquote>`
         } else if (block.type === 'linkTool') {
           /**
@@ -172,10 +172,9 @@ export default {
            * --------------------------------------------------
            */
           html += `<ul class='todo'>`
-          block.data.items.forEach(function(li) {
-            html += `<li class='todo__item'><div class='todo__state todo__state--${
-              li.checked ? 'checked' : 'unchecked'
-            }'></div>
+          block.data.items.forEach(function (li) {
+            html += `<li class='todo__item'><div class='todo__state todo__state--${li.checked ? 'checked' : 'unchecked'
+              }'></div>
         <div class='todo__text'>
           ${li.text}
         </div>
@@ -184,7 +183,7 @@ export default {
           html += `</ul>`
         } else if (block.type === 'list') {
           html += `<${block.data.style === 'ordered' ? 'o' : 'u'}l>`
-          block.data.items.forEach(function(li) {
+          block.data.items.forEach(function (li) {
             html += `<li>${li}</li>`
           })
           html += `</${block.data.style === 'ordered' ? 'o' : 'u'}l>`
