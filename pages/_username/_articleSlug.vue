@@ -60,6 +60,8 @@
           :id="article.id"
           v-html="article.body"
         />
+        
+        <article-comments />
       </div>
     </div>
   </div>
@@ -129,12 +131,12 @@ export default {
       updatedCount: 0,
     }
   },
-  // mounted() {
-  //   window.addEventListener('scroll', this.changeProgressCircleOnScroll)
-  // },
-  // beforeDestroy() {
-  //   window.removeEventListener('scroll', this.changeProgressCircleOnScroll)
-  // },
+  mounted() {
+     window.addEventListener('scroll', this.changeProgressCircleOnScroll)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.changeProgressCircleOnScroll)
+  },
   async fetch() {
     try {
       const { data: article } = await this.$axios.get(
