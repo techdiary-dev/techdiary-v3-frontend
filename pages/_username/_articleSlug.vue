@@ -50,15 +50,6 @@
             </nuxt-link>
           </div>
         </div>
-
-        <!-- Title and meta end -->
-        <article-user-info :article="article" />
-
-        <pre>
-          {{ article.body }}
-        </pre>
-
-        <article-comments />
       </div>
     </div>
   </div>
@@ -70,7 +61,7 @@ import cloudinary from '~/mixins/cloudinary'
 
 export default {
   name: 'techdiary-details',
-  mixins: [reactions, editorjsParser, cloudinary],
+  mixins: [reactions, cloudinary],
   head() {
     return {
       title: this.article?.title,
