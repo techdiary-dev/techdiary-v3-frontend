@@ -54,12 +54,9 @@
         <!-- Title and meta end -->
         <article-user-info :article="article" />
 
-        <article
-          ref="content"
-          class="my-6 content-typography text-dark max-w-none"
-          :id="article.id"
-          v-html="article.body"
-        />
+        <pre>
+          {{ article.body }}
+        </pre>
 
         <article-comments />
       </div>
