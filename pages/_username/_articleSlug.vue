@@ -60,14 +60,14 @@
           :id="article.id"
           v-html="article.body"
         />
-        
+
         <article-comments />
       </div>
     </div>
   </div>
 </template>
 <script>
-import editorjsParser from '~/mixins/editorjsParser'
+// import editorjsParser from '~/mixins/editorjsParser'
 import reactions from '~/mixins/reactions'
 import cloudinary from '~/mixins/cloudinary'
 
@@ -132,7 +132,7 @@ export default {
     }
   },
   mounted() {
-     window.addEventListener('scroll', this.changeProgressCircleOnScroll)
+    window.addEventListener('scroll', this.changeProgressCircleOnScroll)
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.changeProgressCircleOnScroll)
@@ -142,7 +142,7 @@ export default {
       const { data: article } = await this.$axios.get(
         `api/articles/${this.$route.params.articleSlug}`
       )
-      article.data.body = this.editorJsParser(article.data.body)
+      // article.data.body = this.editorJsParser(article.data.body)
       // article.data.body = article.data.body
       this.article = article.data
       this.reactions = article.data.reactions
@@ -180,5 +180,3 @@ export default {
   },
 }
 </script>
-
-<style></style>
