@@ -67,7 +67,7 @@
   </div>
 </template>
 <script>
-// import editorjsParser from '~/mixins/editorjsParser'
+import editorjsParser from '~/mixins/editorjsParser'
 import reactions from '~/mixins/reactions'
 import cloudinary from '~/mixins/cloudinary'
 
@@ -142,7 +142,7 @@ export default {
       const { data: article } = await this.$axios.get(
         `api/articles/${this.$route.params.articleSlug}`
       )
-      // article.data.body = this.editorJsParser(article.data.body)
+      article.data.body = this.editorJsParser(article.data.body)
       // article.data.body = article.data.body
       this.article = article.data
       this.reactions = article.data.reactions
