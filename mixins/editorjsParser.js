@@ -1,4 +1,4 @@
-import md from '~/mixins/MarkdownParser'
+// import md from '~/mixins/MarkdownParser'
 // import ImageWidget from '~/components/ImageWidget.vue'
 // import Vue from 'vue'
 
@@ -61,20 +61,22 @@ export default {
           if (block.data?.file?.url) {
             let publicId = block.data.file.url.split('/').slice(-2).join('/')
             const imageUrl = `https://res.cloudinary.com/techdiary-dev/image/upload/c_scale,f_auto,q_auto/v1/${publicId}`
-            const title = block.data.caption ? block.data.caption : 'article-image'
+            const title = block.data.caption
+              ? block.data.caption
+              : 'article-image'
             html += `
-          <figure class='${block.data.stretched ? 'image--stretched' : 'image--normal'
-              }'>
-            <img src='${imageUrl
-              }' title='Techdiary: ${title}' alt='Techdiary: ${title}' loading='lazy' />
-          ${block.data.caption
-                ? `<figcaption>${block.data.caption}</figcaption>`
-                : ''
-              }
+          <figure class='${
+            block.data.stretched ? 'image--stretched' : 'image--normal'
+          }'>
+            <img src='${imageUrl}' title='Techdiary: ${title}' alt='Techdiary: ${title}' loading='lazy' />
+          ${
+            block.data.caption
+              ? `<figcaption>${block.data.caption}</figcaption>`
+              : ''
+          }
             </figure/>
           `
           }
-
         } else if (block.type === 'embed') {
           /**
            * --------------------------------------------------
@@ -92,11 +94,16 @@ export default {
            *  Block: code
            * --------------------------------------------------
            */
-          const code =
-            '```' + block.data.languageCode + '\n' + block.data.code + '\n' + '```'
-          const parsedHtmlCode = md(code)
+          // const code =
+          //   '```' +
+          //   block.data.languageCode +
+          //   '\n' +
+          //   block.data.code +
+          //   '\n' +
+          //   '```'
+          // const parsedHtmlCode = md(code)
 
-          html += parsedHtmlCode
+          html += `<pre class="hljs language-${block.data.languageCode}">${block.data.code}</pre>`
         } else if (block.type === 'warning') {
           /**
            * --------------------------------------------------
@@ -125,10 +132,11 @@ export default {
           ${block.data.text}
         </p>
 
-        ${block.data.caption !== null
-              ? `<p class='author'>- ${block.data.caption}</p>`
-              : ''
-            }
+        ${
+          block.data.caption !== null
+            ? `<p class='author'>- ${block.data.caption}</p>`
+            : ''
+        }
       </blockquote>`
         } else if (block.type === 'linkTool') {
           /**
@@ -137,14 +145,21 @@ export default {
            * --------------------------------------------------
            */
           html += `
-          <a style='text-decoration: none; display: grid; grid-template-columns: 1fr 200px' class='w-full mx-auto border rounded-md border-gray-50 dark:border-gray-700 hover:bg-opacity-60 shadow h-[fit-content]' href='${block.data.link}' target='_blank'>
+          <a style='text-decoration: none; display: grid; grid-template-columns: 1fr 200px' class='w-full mx-auto border rounded-md border-gray-50 dark:border-gray-700 hover:bg-opacity-60 shadow h-[fit-content]' href='${
+            block.data.link
+          }' target='_blank'>
 
             <span>
                 <p class='text-dark text-md pl-3'>${block.data.meta.title}</p>
-                <p class='text-sm pl-3 pr-2'>${block.data.meta.description.substr(0, 130)}</p>
+                <p class='text-sm pl-3 pr-2'>${block.data.meta.description.substr(
+                  0,
+                  130
+                )}</p>
             </span>
              <span class='col-span-2 w-full'>
-              <img src='${block.data.meta.image.url}' class='w-full' alt='${block.data.meta.title}'/>
+              <img src='${block.data.meta.image.url}' class='w-full' alt='${
+            block.data.meta.title
+          }'/>
             </span>
 
           </a>
@@ -173,8 +188,9 @@ export default {
            */
           html += `<ul class='todo'>`
           block.data.items.forEach(function (li) {
-            html += `<li class='todo__item'><div class='todo__state todo__state--${li.checked ? 'checked' : 'unchecked'
-              }'></div>
+            html += `<li class='todo__item'><div class='todo__state todo__state--${
+              li.checked ? 'checked' : 'unchecked'
+            }'></div>
         <div class='todo__text'>
           ${li.text}
         </div>
@@ -191,6 +207,6 @@ export default {
       })
 
       return html
-    }
-  }
+    },
+  },
 }
