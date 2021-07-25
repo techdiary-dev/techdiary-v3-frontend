@@ -103,7 +103,7 @@ export default {
           //   '```'
           // const parsedHtmlCode = md(code)
 
-          html += `<pre class="hljs language-${block.data.languageCode}">${block.data.code}</pre>`
+          html += `<pre class="hljs language-${block.data.languageCode}"><code>${block.data.code}</code></pre>`
         } else if (block.type === 'warning') {
           /**
            * --------------------------------------------------
