@@ -59,7 +59,7 @@
           ref="content"
           class="my-6 content-typography text-dark max-w-none"
           :id="article.id"
-          v-html="article.body_html"
+          v-html="article.body"
         />
 
         <article-comments />
@@ -68,13 +68,13 @@
   </div>
 </template>
 <script>
-// import editorjsParser from '~/mixins/editorjsParser'
+import editorjsParser from '~/mixins/editorjsParser'
 import reactions from '~/mixins/reactions'
 import cloudinary from '~/mixins/cloudinary'
 
 export default {
   name: 'techdiary-details',
-  mixins: [reactions, cloudinary],
+  mixins: [reactions, cloudinary, editorjsParser],
   head() {
     return {
       title: this.article?.title,
@@ -143,8 +143,8 @@ export default {
       const { data: article } = await this.$axios.get(
         `api/articles/${this.$route.params.articleSlug}`
       )
-      // article.data.body = this.editorJsParser(article.data.body)
-      // article.data.body = article.data.body
+      article.data.body = this.editorJsParser(article.data.body)
+      article.data.body = article.data.body
       this.article = article.data
       this.reactions = article.data.reactions
     } catch (error) {
