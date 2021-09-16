@@ -15,6 +15,7 @@
       <div class="fixed hidden w-32 md:block top-25">
         <ArticleReactions :article="article" />
       </div>
+
       <div class="mx-auto md:w-8/12">
         <div v-if="article.thumbnail" class="overflow-hidden rounded-md">
           <image-widget
@@ -58,7 +59,7 @@
           ref="content"
           class="my-6 content-typography text-dark max-w-none"
           :id="article.id"
-          v-html="article.body"
+          v-html="article.body_html"
         />
 
         <article-comments />
@@ -67,13 +68,13 @@
   </div>
 </template>
 <script>
-import editorjsParser from '~/mixins/editorjsParser'
+// import editorjsParser from '~/mixins/editorjsParser'
 import reactions from '~/mixins/reactions'
 import cloudinary from '~/mixins/cloudinary'
 
 export default {
   name: 'techdiary-details',
-  mixins: [reactions, editorjsParser, cloudinary],
+  mixins: [reactions, cloudinary],
   head() {
     return {
       title: this.article?.title,
@@ -142,7 +143,7 @@ export default {
       const { data: article } = await this.$axios.get(
         `api/articles/${this.$route.params.articleSlug}`
       )
-      article.data.body = this.editorJsParser(article.data.body)
+      // article.data.body = this.editorJsParser(article.data.body)
       // article.data.body = article.data.body
       this.article = article.data
       this.reactions = article.data.reactions

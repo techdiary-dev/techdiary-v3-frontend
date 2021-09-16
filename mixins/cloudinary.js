@@ -18,6 +18,7 @@ export default {
     },
     fetchRemoteUrl() {
       return this.$cloudinary.image.fetchRemote(this.imageUrl, this.$attrs)
+      // return 'https://via.placeholder.com/650'
     },
   },
 }
